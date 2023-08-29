@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const port = process.env.PORT;
+const port = process.env.PORT || 80;
 const pool = require("./Server/dataBase");
 const router = require("./Server/router");
 const app = express();
@@ -16,6 +16,6 @@ app.get("/api/createUser", (req, res) =>
 
 // Using the router for user-related routes
 app.use("/api/users", router);
-app.listen(port, () =>
+app.listen(port, "0.0.0.0", () =>
 	console.log(`Server is Running at http://localhost:${port}`)
 );
