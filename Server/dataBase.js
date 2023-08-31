@@ -14,11 +14,9 @@ const mysql = require("mysql2");
 // });
 
 // Planet Db
-
 const pool = mysql.createConnection(process.env.DATABASE_URL);
 
 //  create connection with our Db
-
 // pool.getConnection((err, connection) => {
 // 	if (err) console.log(err);
 // 	console.log("Db COnnected..!");
@@ -39,14 +37,14 @@ let profile = `CREATE TABLE  if not exists profile (
 )`;
 let question = `CREATE TABLE if not exists question (
     question_id INT PRIMARY KEY AUTO_INCREMENT,
-    question VARCHAR(255) NOT NULL,
+    question VARCHAR(355) NOT NULL,
     question_description VARCHAR(255) NOT NULL,
     user_id INT NOT NULL
     
 )`;
 let answer = `CREATE TABLE  if not exists answer (
     answer_id INT PRIMARY KEY AUTO_INCREMENT,
-    answer VARCHAR(255) NOT NULL,
+    answer VARCHAR(855) NOT NULL,
     user_id INT NOT NULL,
     question_id INT NOT NULL
     
